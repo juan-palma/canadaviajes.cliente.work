@@ -1,0 +1,1513 @@
+/*
+	*Main CSS para implementacion directa de sitios.
+	
+	*La adaptacion del bolierplate y este codigo son esfuerzo del eqipo de ID.A libre
+	*con agradecimientos especiales a Juan Palma encargado de la implementacion.
+*/
+
+@font-face {
+    font-family: 'Twr';
+    src: url('fonts/TwCenMT-Regular.woff2') format('woff2'),
+        url('fonts/TwCenMT-Regular.woff') format('woff'),
+        url('fonts/TwCenMT-Regular.svg#TwCenMT-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'fb';
+    src: url('fonts/Futura-Book.woff2') format('woff2'),
+        url('fonts/Futura-Book.woff') format('woff'),
+        url('fonts/Futura-Book.svg#Futura-Book') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'fl';
+    src: url('fonts/Futura-Light.woff2') format('woff2'),
+        url('fonts/Futura-Light.woff') format('woff'),
+        url('fonts/Futura-Light.svg#Futura-Light') format('svg');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Twi';
+    src: url('fonts/TwCenMT-Italic.woff2') format('woff2'),
+        url('fonts/TwCenMT-Italic.woff') format('woff'),
+        url('fonts/TwCenMT-Italic.svg#TwCenMT-Italic') format('svg');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Twbi';
+    src: url('fonts/TwCenMT-BoldItalic.woff2') format('woff2'),
+        url('fonts/TwCenMT-BoldItalic.woff') format('woff'),
+        url('fonts/TwCenMT-BoldItalic.svg#TwCenMT-BoldItalic') format('svg');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'fh';
+    src: url('fonts/Futura-Heavy.woff2') format('woff2'),
+        url('fonts/Futura-Heavy.woff') format('woff'),
+        url('fonts/Futura-Heavy.svg#Futura-Heavy') format('svg');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'fbo';
+    src: url('fonts/Futura-Bold.woff2') format('woff2'),
+        url('fonts/Futura-Bold.woff') format('woff'),
+        url('fonts/Futura-Bold.svg#Futura-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'fbi';
+    src: url('fonts/Futura-BookItalic.woff2') format('woff2'),
+        url('fonts/Futura-BookItalic.woff') format('woff'),
+        url('fonts/Futura-BookItalic.svg#Futura-BookItalic') format('svg');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Twb';
+    src: url('fonts/TwCenMT-Bold.woff2') format('woff2'),
+        url('fonts/TwCenMT-Bold.woff') format('woff'),
+        url('fonts/TwCenMT-Bold.svg#TwCenMT-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+  font-family: 'twceb';
+  src: url('fonts/TwCenMT-CondensedExtraBold.eot?#iefix') format('embedded-opentype'),  url('fonts/TwCenMT-CondensedExtraBold.woff') format('woff'), url('fonts/TwCenMT-CondensedExtraBold.ttf')  format('truetype'), url('fonts/TwCenMT-CondensedExtraBold.svg#TwCenMT-CondensedExtraBold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+/* ==========================================================================
+	Parametros Globales
+========================================================================== */
+
+body,
+html{
+	height: 100% !important;
+	max-height: 100% !important;
+	min-height: 100%;
+}
+html{
+	overflow-x: hidden;
+}
+#fondo_body{
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background : #292D27 url(../img/bg.jpg) no-repeat center center;
+	background-size: cover;
+	background-attachment: fixed;
+}
+body, button, input, select, textarea{
+	font-family: 'fb', 'Lato', Arial, Helvetica, sans-serif;
+	color: #56504a;
+	letter-spacing: 0.05em;
+}
+
+div, label{
+	width: auto;
+	height: auto;
+	display: block;
+	position: relative;
+}
+main, footer, header, aside, section, article, figure, figcaption, q, cite, blockquote{
+	display: block;
+	position: relative;
+}
+*{
+	box-sizing: border-box;
+}
+
+#vCard{
+	width: 1px;
+	height: 1px;
+	clip: rect(1px 1px 1px 1px);
+	position: absolute;
+	opacity: 0.1;
+	overflow: hidden;
+}
+
+#primaryContainer{
+	height: auto;
+	min-height: 100%;
+	text-align: center;
+}
+
+	
+@-ms-viewport {
+	width: device-width;
+	zoom: 1.0;
+	max-zoom: 1.0;
+}
+
+@viewport {
+	width: device-width;
+	zoom: 1.0;
+	max-zoom: 1.0;
+}
+
+
+
+
+
+
+/* ==========================================================================
+	Codigo de ejemplos !!
+========================================================================== */
+/* Bordes #f07033ondeados */
+/*
+	border-radius : 6px;
+	-moz-border-radius : 6px;
+	-webkit-border-radius : 6px;
+*/
+
+/* Sombras de objetos */
+/*
+	box-shadow : 1px 3px 4px rgba(0, 29, 40, 0.18);
+	filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=1, OffY=3, Color='#001D28') ;
+*/
+	
+/* Animaciones de trancicion */
+/*
+	-webkit-transition: all 0.2s ease-in-out;
+	-moz-transition: all 0.2s ease-in-out;
+	-o-transition: all 0.2s ease-in-out;
+	-ms-transition: all 0.2s ease-in-out;
+	transition: all 0.2s ease-in-out;
+*/
+
+/* comportamiento de borde y padding en objetos a su interior o exterior */
+/*
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	box-sizing:border-box;
+*/
+
+	
+
+
+
+
+
+
+
+
+/* ==========================================================================
+	Estilos visiales para elementos GENERALES
+========================================================================== */
+
+table,
+tbody,
+tr,
+td{
+	width: auto;
+	height: 100%;
+	text-align: center;
+	vertical-align: middle;
+	margin: 0 auto;
+	padding: 0;
+	border: 0 none transparent;
+	border-spacing: 0;
+	background: transparent;
+}
+table,
+tbody{
+	width: 100%;
+	display: table;
+}
+
+.desaparece{
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	opacity: 0.1;
+	clip: rect(1px 1px 1px 1px );
+	position: absolute;
+}
+.ocultar{
+	display: none;
+}
+.opacidad_0{
+	opacity: 0;
+}
+
+
+/* //Generales */
+.anima_zoom_mas{
+	-o-transform: scale3d(1.46, 1.46, 1) !important;
+	-ms-transform: scale3d(1.46, 1.46, 1) !important;
+	-moz-transform: scale3d(1.46, 1.46, 1) !important;
+	-webkit-transform: scale3d(1.46, 1.46, 1) !important;
+	transform: scale3d(1.46, 1.46, 1) !important;
+	opacity: 0 !important;
+}
+
+
+
+
+
+.dnone{
+	display: none !important;
+}
+.op0{
+	opacity: 0 !important;
+}
+.cRojo{
+	color: #f07033;
+}
+.pie{
+	font-size: 84%;
+}
+
+
+
+
+
+
+
+
+
+
+
+	
+/* ==========================================================================
+	Estilos visiales del sitio.
+========================================================================== */
+body{
+	background: #000;
+}
+nav#menu{
+	width: 100%;
+	height: 84px;
+	background: #000;
+	color: white;
+	text-align: left;
+	padding: 0px 3%;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	z-index: 920;
+	box-sizing: border-box;
+}
+	#boxLogo{
+		height: 100%;
+		width: auto;
+		float: left;
+		position: initial;
+	}
+		#logo{
+			height: 71%;
+			position: relative;
+			top: 14px;
+			z-index: 20;
+		}
+			#logo img{
+				height: 100%;
+				width: auto;
+			}
+		#fondo{
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			z-index: 0;
+		}
+		
+	ul#menuBox,
+	ul#menuBoxMovile{
+		float: right;
+		text-align: right;
+		position: absolute;
+		right: 3%;
+		top: 25px;
+	}
+		ul#menuBox li,
+		ul#menuBoxMovile li{
+			display: inline-block;
+			position: relative;
+			padding: 0px 0px 0px 24px;
+			float: right;
+			font-family: 'twb';
+			font-size: 68%;
+			text-align: center;
+			cursor: pointer;
+			
+			-webkit-transition: color 0.2s ease-in-out;
+			-moz-transition: color 0.2s ease-in-out;
+			-o-transition: color 0.2s ease-in-out;
+			-ms-transition: color 0.2s ease-in-out;
+			transition: color 0.2s ease-in-out;
+		}
+		ul#menuBoxMovile li{
+			font-size: 90%;
+		}
+		ul#menuBox li:hover,
+		ul#menuBoxMovile li:hover,
+		ul#menuBox li.activo{
+			color: #f07033;
+		}
+		ul#menuBox li:after,
+		ul#menuBoxMovile li:after{
+			content: " ";
+			width: 1px;
+			height: 20px;
+			background-color: #f07033;
+			position: absolute;
+			left: 50%;
+			margin-left: 11px;
+			bottom:auto;
+			top: 39px;
+			
+			-webkit-transition: all 0.2s ease-in-out;
+			-moz-transition: all 0.2s ease-in-out;
+			-o-transition: all 0.2s ease-in-out;
+			-ms-transition: all 0.2s ease-in-out;
+			transition: all 0.2s ease-in-out;
+		}
+		ul#menuBox li:hover:after,
+		ul#menuBoxMovile li:hover:after,
+		ul#menuBox li.activo:after{
+			height: 26px;
+			bottom:-40px;
+		}
+		
+	#menuBoxMovile{
+		display: none;
+	}
+	#boxTelMovile{
+		display: none;
+	}
+	#formMovile{
+		overflow: hidden;
+		
+		-webkit-transition: all 0.2s ease-in-out;
+		-moz-transition: all 0.2s ease-in-out;
+		-o-transition: all 0.2s ease-in-out;
+		-ms-transition: all 0.2s ease-in-out;
+		transition: all 0.2s ease-in-out;
+	}
+	#formMovile.formMovileHide{
+		height: 0px;
+		opacity: 0px;
+	}
+	
+	
+	#menuBoxMovile #btnReservaMovileClose{
+		display: none;
+	}
+	#menuBoxMovile #btnReservaMovile{
+		display: inline-block;
+	}
+	#menuBoxMovile.activo #btnReservaMovileClose{
+		display: inline-block;
+	}
+	#menuBoxMovile.activo #btnReservaMovile{
+		display: none;
+	}
+	
+	#tel a, #telMovile a{
+		color: white;
+		text-decoration: none;
+	}
+	#whatsappMovile, #iconoWatsapp{
+		cursor: pointer;
+	}
+	
+
+#video_text{
+	width: 100%;
+	height: auto;
+	padding-top: 83px;
+	min-height: calc(56vw + 83px);
+}
+	#videoBtnPlay{
+		width: auto;
+	    height: auto;
+	    max-width: 280px;
+	    display: inline-block;
+	    position: absolute;
+	    left: 50%;
+	    transform: translateX(-50%);
+	    top: 24%;
+	    cursor: pointer;
+	    z-index: 700;
+	}
+		#videoBtnPlay img{
+			width: 100%;
+			height: auto;
+		}
+	#videoControls{
+		width: 40px;;
+	    height: auto;
+	    max-width: 280px;
+	    display: inline-block;
+	    position: absolute;
+	    left: auto;
+	    top: 100px;
+	    right: 3%;
+	    cursor: pointer;
+	    z-index: 700;
+	}
+		#videoControls #videoBtnPausa{
+			width: 100%;
+			height: auto;
+			display: block;
+			cursor: pointer;
+			
+			-webkit-transition: all 0.1s ease-in-out;
+			-moz-transition: all 0.1s ease-in-out;
+			-o-transition: all 0.1s ease-in-out;
+			-ms-transition: all 0.1s ease-in-out;
+			transition: all 0.1s ease-in-out;
+		}
+		#videoControls #videoBtnPausa:hover{
+			-o-transform: scale3d(1.2, 1.2, 1);
+			-ms-transform: scale3d(1.2, 1.2, 1);
+			-moz-transform: scale3d(1.2, 1.2, 1);
+			-webkit-transform: scale3d(1.2, 1.2, 1);
+			transform: scale3d(1.2, 1.2, 1);
+		}
+			#videoControls #videoBtnPausa img{
+				width: 100%;
+				height: auto;
+			}
+		#videoControls #videoBtnMute{
+			width: 100%;
+			height: auto;
+			display: block;
+			cursor: pointer;
+			margin-top: 13px;
+			
+			-webkit-transition: all 0.2s ease-in-out;
+			-moz-transition: all 0.2s ease-in-out;
+			-o-transition: all 0.2s ease-in-out;
+			-ms-transition: all 0.2s ease-in-out;
+			transition: all 0.2s ease-in-out;
+		}
+		#videoControls #videoBtnMute:hover{
+			-o-transform: scale3d(1.2, 1.2, 1);
+			-ms-transform: scale3d(1.2, 1.2, 1);
+			-moz-transform: scale3d(1.2, 1.2, 1);
+			-webkit-transform: scale3d(1.2, 1.2, 1);
+			transform: scale3d(1.2, 1.2, 1);
+		}
+			#videoControls #videoBtnMute img{
+				width: 100%;
+				height: auto;
+			}
+	
+.mainSec{
+	width: 100%;
+	min-height: calc(100vh);
+	display: flex;
+    align-items: center;
+	text-align: center;
+	padding: 1rem 3% 14rem;
+	text-align: left;
+	z-index: 22;
+}
+	.mainSec:first-of-type{
+		z-index: 30;
+	}
+	article.mainSec:last-of-type{
+		padding-bottom: 4rem;
+	}
+	
+	.boxCenter{
+		width: 100%;
+		max-width: 985px;
+		height: auto;
+		margin: 0 auto;
+		z-index: 10;
+		padding-top: 17px;
+	}
+		.boxTitulo{
+			width: 100%;
+			height: auto;
+			color: white;
+			padding-bottom: 9px;
+		}
+			.boxTitulo h2{
+				font-family: 'twceb';
+				font-size: 40pt;
+				letter-spacing: 11px;
+				line-height: 1.3;
+			}
+			.boxTitulo .incluye{
+				width: 98px;
+				display: block;
+			}
+				.boxTitulo .incluye img{
+					width: 100%;
+					height: auto;
+				}
+			.manchaTitulo{
+				width: auto;
+				height: auto;
+				display: block;
+				position: absolute;
+				left: -14%;
+				top: -18%;
+				z-index: 0;
+			}
+		.boxCols{
+			width: 100%;
+			height: auto;
+			display: flex;
+		    justify-content: stretch;
+		    flex-wrap: nowrap;
+		}
+			.boxCols > .col1, .boxCols > .col2, .boxCols > .col3{
+				flex: 1;
+			}
+			.boxCols > .col1{
+				display: flex;
+				flex-wrap: wrap;
+				place-items: flex-start;
+				align-content: flex-start;
+			}
+				.boxCols > .col1 .linea{
+					width: 100%;
+					height: auto;
+					display: flex;
+					flex-wrap: nowrap;
+					justify-content: flex-start;
+				}
+					.boxCols > .col1 .linea .col1{
+						width: 84px;
+						display: flex;
+					    justify-items: center;
+					    text-align: center;
+					    background-color: #000;
+					}
+						.boxCols > .col1 .linea .col1 img{
+							margin: 0 auto;
+							width: 62%;
+						}
+					.boxCols > .col1 .linea .col2{
+						flex: 1;
+						background-color: #fff;
+					}
+						.boxCols > .col1 .linea .col2 p{
+							margin: 0px;
+							padding: 23px 22px;
+							font-size: 90%;
+						}
+						.boxCols > .col1 .linea .col2 .division{
+							width: 96%;
+							height: 1px;
+							left: 2%;
+							background-color: #D8D8D8;
+						}
+				.boxCols > .col1 .lineaFondo{
+					width: 100%;
+					height: 100%;
+					display: flex;
+					flex-wrap: nowrap;
+					justify-content: stretch;
+					position: absolute;
+					top: 0px;
+					left: 0px;
+					z-index: 0;
+				}
+				.boxCols > .col1 .btnSlider{
+					width: 100%;
+					height: 60px;
+					display: flex;
+					flex-wrap: nowrap;
+					background-color: #f07033;
+					position: absolute;
+					bottom: -60px;
+					color: white;
+				}
+					.boxCols > .col1 .btnSlider .col1, .boxCols > .col1 .btnSlider .col2{
+						flex: 1;
+						display: flex;
+					    justify-items: center;
+					    text-align: center;
+					}
+						.boxCols > .col1 .btnSlider .col1 .btnBack,
+						.boxCols > .col1 .btnSlider .col1 .btnNext{
+							width: 35%;
+							justify-content: center;
+							align-items: center;
+							display: flex;
+							cursor: pointer;
+							
+							-webkit-transition: all 0.2s ease-in-out;
+							-moz-transition: all 0.2s ease-in-out;
+							-o-transition: all 0.2s ease-in-out;
+							-ms-transition: all 0.2s ease-in-out;
+							transition: all 0.2s ease-in-out;
+						}
+						.boxCols > .col1 .btnSlider .col1 .btnBack:hover,
+						.boxCols > .col1 .btnSlider .col1 .btnNext:hover{
+							background-color: #cd4707;
+						}
+						.boxCols > .col1 .btnSlider .col1 .btnNext{
+							border-left: 1px solid rgba(255, 255, 255, 0.2);
+						}
+						.boxCols > .col1 .btnSlider .col1 .btnBack{
+							border-right: 1px solid rgba(255, 255, 255, 0.2);
+						}
+						.boxCols > .col1 .btnSlider .col1 .btnBullet{
+							width: 30%;
+							justify-content: center;
+							align-items: center;
+							display: flex;
+						}
+						.boxCols > .col1 .btnSlider .col1 .btnBullet .bullet{
+							width: 11px;
+							height: 11px;
+							border-radius: 50%;
+							border: 2px solid white;
+							margin-right: 4px;
+							cursor: pointer;
+							
+							-webkit-transition: all 0.2s ease-in-out;
+							-moz-transition: all 0.2s ease-in-out;
+							-o-transition: all 0.2s ease-in-out;
+							-ms-transition: all 0.2s ease-in-out;
+							transition: all 0.2s ease-in-out;
+						}
+						.boxCols > .col1 .btnSlider .col1 .btnBullet .bullet:last-child{
+							margin-right: 0px;
+						}
+						.boxCols > .col1 .btnSlider .col1 .btnBullet .bullet.activo,
+						.boxCols > .col1 .btnSlider .col1 .btnBullet .bullet:hover{
+							border: 2px solid #f07033;
+							background-color: white;
+						}
+					.boxCols > .col1 .btnSlider .col2{
+						font-size: 80%;
+						justify-content: center;
+						align-items: center;
+						cursor: pointer;
+						background-color: #cd4707;
+						
+						-webkit-transition: all 0.2s ease-in-out;
+						-moz-transition: all 0.2s ease-in-out;
+						-o-transition: all 0.2s ease-in-out;
+						-ms-transition: all 0.2s ease-in-out;
+						transition: all 0.2s ease-in-out;
+					}
+						.boxCols > .col1 .btnSlider .col2 a{
+							color: white;
+							text-decoration: none;
+						}
+					.boxCols > .col1 .btnSlider .col2:hover{
+						background-color: #000;
+					}
+						
+			.boxCols > .col2{
+				display: flex;
+				background-color: rgba(0, 0, 0, 0.6);
+				flex-wrap: wrap;
+				color: white;
+			}
+				.boxCols > .col2 .linea{
+					width: 100%;
+					height: auto;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					padding: 7px 0px;
+				}
+					.boxCols > .col2 .linea.humano .col1{
+						width: 42px;
+					}
+					.boxCols > .col2 .linea .col1{
+						width: 87px;
+						overflow: hidden;
+					}
+						.boxCols > .col2 .linea .col1 img{
+							position: relative;
+							left: -30%
+						}
+					.boxCols > .col2 .linea .col2{
+						flex: 1;
+						padding: 0px 12px 0px 6px;
+					}
+						.boxCols > .col2 .linea .col2 .dias{
+							width: 100%;
+							display: block;
+							font-size: 55pt;
+							font-family: 'twceb';
+							letter-spacing: -3px;
+						}
+						.boxCols > .col2 .linea .col2 .leyenda{
+							width: 100%;
+							display: block;
+							font-size: 12pt;
+							padding: 2px 0px 14px;
+						}
+						.boxCols > .col2 .linea .col2 .desde{
+							width: 100%;
+							display: block;
+							font-size: 19pt;
+						}
+						.boxCols > .col2 .linea .col2 .precio{
+							width: 100%;
+							display: block;
+							font-size: 50pt;
+							font-family: 'twceb';
+							letter-spacing: -6px;
+						}
+						.boxCols > .col2 .linea .col2 .moneda{
+							font-size: 36%;
+							letter-spacing: -2px;
+						}
+				.boxCols > .col2 .linea .division{
+					width: 100%;
+				    display: block;
+				    position: absolute;
+				    height: 1px;
+				    bottom: 0px;
+				    background-color: #616161;
+				}
+				.boxCols > .col2 .vigencia{
+					padding: 1rem 1.5rem;
+				}
+			
+			
+			.boxCols > .col3{
+				
+			}
+				#formBox{
+					width: 100%;
+					height: auto;
+					max-width: 308.95px;
+				}
+					#manchaReserva{
+						position: absolute;
+						top: -112px;
+						left: -32px;
+					}
+					.formContain{
+						width: 100%;
+						height: 100%;
+						background-color: #f07033;
+						color: white;
+						padding: 28px;
+						padding-bottom: 0px;
+					}
+						#reservaBox{
+							width: calc(100% - 56px);
+							position: absolute;
+							top: -72px;
+						}
+							#reservaBox .reserva{
+								font-size: 32pt;
+								line-height: .5;
+							}
+							#tel{
+								letter-spacing: -2px;
+								font-size: 51pt;
+								font-family: 'twceb';
+								cursor: pointer;
+							}
+							#iconoWatsapp{
+								position: absolute;
+								left: auto;
+								top: -28px;
+								right: 0px;
+							}
+						.formContain p.info{
+							line-height: 1.4;
+							width: 85%;
+							font-size: 90%;
+						}
+						.formContain form{
+							width: 100%;
+							height: auto;
+							padding: 24px 0px;
+						}
+							.formContain form input{
+								width: 100%;
+								background-color: transparent;
+								color: white;
+								border: 2px solid #cd4707;
+								padding: 9px 19px;
+								border-radius: 40px;
+								margin-bottom: 16px;
+								text-align: left;
+								font-size: 105%;
+								box-shadow: none;
+							}
+							.formContain form input:active,
+							.formContain form input:hover,
+							.formContain form input:focus{
+								box-shadow: none;
+							}
+							.formContain form input:focus{
+								background-color: rgba(255, 255, 255, 0.1);
+							}
+							.formContain form input::placeholder{
+								color: white;
+							}
+							.formContain form input[type="submit"]{
+								background-color: #000;
+								color: white;
+								padding: 9px 16px;
+								text-align: center;
+								margin-bottom: 2px;
+								font-size: 120%;
+								
+								-webkit-transition: all 0.2s ease-in-out;
+								-moz-transition: all 0.2s ease-in-out;
+								-o-transition: all 0.2s ease-in-out;
+								-ms-transition: all 0.2s ease-in-out;
+								transition: all 0.2s ease-in-out;
+							}
+							.formContain form input[type="submit"]:hover{
+								background-color: #000;
+								border: 2px solid #000;
+								outline: none;
+							}
+						.formContain .metodosPago{
+							color: black;
+							text-align: center;
+							position: relative;
+							padding: 19px 0px 27px;
+							margin-top: -26px;
+							font-family: 'twceb';
+							line-height: 1;
+							font-size: 128%;
+						}
+							.formContain .metodosPago p{
+								position: relative;
+							}
+							#manchaFormFondo{
+								width: calc(100% + 56px);
+								left: -28px;
+								height: 100%;
+								position: absolute;
+								top: 0px;
+								overflow: hidden;
+								z-index: 0;
+								margin: -1px 0px 0px;
+							}
+								#manchaFormFondo img{
+									width: 102%;
+								    height: auto;
+								    position: relative;
+								    left: 50%;
+								    transform: translateX(-50%) translateY(-50%);
+								    top: 50%;
+								}
+						
+						.gracias{
+							width: 100%;
+							height: auto;
+							position: absolute;
+							top: 0px;
+							left: 0px;
+							display: flex;
+							align-items: baseline;
+							flex-direction: column;
+							justify-content: center;
+    						padding: 2rem;
+    						font-size: 36pt;
+						    color: white;
+						    font-family: twceb;
+						    line-height: .8;
+						    background-color: #E12726;
+						    display: none;
+							opacity: 0px;
+						}
+							.gracias .graciasPor{
+								font-size: 63pt;
+								margin-top: -106px;
+							}
+							.gracias .teEspera{
+								font-size: 25pt;
+								margin-top: 3rem;
+							}
+						#boxFormMovile .gracias{
+							height: 100%;
+						}
+							
+	
+	#ciudad{
+		width: 100%;
+		position: absolute;
+		top: calc(-29vw);
+		left: 0px;
+		z-index: 1;
+		
+		-webkit-transition: all 0.2s ease-in-out;
+		-moz-transition: all 0.2s ease-in-out;
+		-o-transition: all 0.2s ease-in-out;
+		-ms-transition: all 0.2s ease-in-out;
+		transition: all 0.2s ease-in-out;
+	}
+		#ciudad img{
+			width: 100%;
+			height: auto;
+		}
+		
+	#sello{
+		width: 300px;
+		position: absolute;
+		right: 0px;
+		bottom: calc(-8vw);
+		z-index: 2;
+	}
+		#sello img{
+			width: 100%;
+			height: auto;
+		}
+
+
+
+#prefooter{
+	width: 100%;
+	min-height: calc(100vh);
+	text-align: center;
+	padding: 1rem 3% 0rem;
+	text-align: right;
+	min-height: calc(80vh);
+	display: flex;
+	
+	background: rgba(0,0,0,0);
+	background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 50%);
+	background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(0,0,0,0)), color-stop(50%, rgba(0,0,0,1)));
+	background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 50%);
+	background: -o-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 50%);
+	background: -ms-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 50%);
+	background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 50%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#000000', GradientType=0 );
+}
+	#prefooter .boxCenter{
+		
+	}
+		#quebec-doodle{
+			position: absolute;
+			left: 0px;
+			bottom: 0px;
+		}
+		#prefooter .caja{
+			position: relative;
+		    top: 50%;
+		    transform: translateY(-50%);
+		    padding-right: 4rem;
+		    text-align: right;
+		    color: white;
+		    padding-bottom: 5rem;
+		}
+			#prefooter .caja h3{
+				font-size: 48pt;
+				font-family: 'twceb';
+				color: white;
+				line-height: .9;
+			}
+
+
+
+footer{
+	width: 100%;
+	text-align: center;
+	padding: 0rem 3% 3rem;
+	text-align: center;
+	background-color: white;
+}
+	#footerCorteDiag{
+		position: absolute;
+		width: 100%;
+		height: auto;
+		top: -74px;
+		left: 0px;
+	}
+		#footerCorteDiag img{
+			width: 100%;
+			height: auto;
+			min-width: 985px;
+			position: relative;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+	footer .caja{
+		padding: 2rem 7%;
+		font-size: 71%;
+		color: black;
+	}
+	
+	#boxLogosFooter{
+		width: 50%;
+	    height: 90px;
+	    display: flex;
+	    align-items: center;
+	    text-align: center;
+	    justify-content: center;
+	    justify-self: center;
+	    margin: 0 auto;
+	}
+		#boxLogosFooter div{
+		    flex: 1;
+		    height: 100%;
+		    width: auto;
+		    padding: 21px 2rem;
+		}
+			#boxLogosFooter div img {
+			    height: 100%;
+			    width: auto;
+			}
+
+
+
+
+
+/* Estilos para back el elemento que contendra todos los slider y videos que siempre permaneceran en el fondo */
+#boxBack{
+	position: fixed;
+	width: 100%;
+	height: calc(100vh - 83px);
+    top: 83px;
+	left: 0px;
+}
+
+	.video{
+		display: block;
+		width: 100%;
+	    height: auto;
+	    position: fixed;
+	    overflow: hidden;
+	    background: rgb(0,0,0,0.7);
+	}
+		video{
+			position: fixed;
+			top: 50%;
+			left: 50%;
+			min-width: 100%;
+			min-height: 100%;
+			width: auto;
+			height: auto;
+			transform: translateX(-50%) translateY(-50%);
+			background: url() no-repeat;
+			background-size: cover;
+			transition: 1s opacity;
+			
+			left: 0px;
+		    top: 0px;
+		    width: 100%;
+		    height: auto;
+		    transform: inherit;
+		    position: initial;
+		}
+		.stopfade { 
+		   opacity: .5;
+		}
+		
+		
+	#boxBack .slider{
+		width: 100%;
+		height: calc(100vh);
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		background-color: #000;
+		
+		-webkit-transition: all 0.2s ease-in-out;
+		-moz-transition: all 0.2s ease-in-out;
+		-o-transition: all 0.2s ease-in-out;
+		-ms-transition: all 0.2s ease-in-out;
+		transition: all 0.2s ease-in-out;
+	}
+	#boxBack .slider .item:after{
+		content: " ";
+		width: 100%;
+		height: calc(20%);
+		position: absolute;
+		top: auto;
+		left: 0px;
+		bottom: 0px;
+		
+		background: rgba(0,0,0,0);
+		background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);
+		background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(0,0,0,0)), color-stop(100%, rgba(0,0,0,1)));
+		background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);
+		background: -o-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);
+		background: -ms-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);
+		background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#000000', GradientType=0 );
+
+	}
+		#boxBack .slider .item{
+			width: 100%;
+			height: auto;
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			
+			-webkit-transition: all 0.2s ease-in-out;
+			-moz-transition: all 0.2s ease-in-out;
+			-o-transition: all 0.2s ease-in-out;
+			-ms-transition: all 0.2s ease-in-out;
+			transition: all 0.2s ease-in-out;
+		}
+			#boxBack .slider .item img{
+				width: 100%;
+				height: auto;
+			}
+		#fraseFinal{
+			padding: 0px 0px 0px 21%;
+		    font-size: 14pt;
+		    position: relative;
+		    margin-top: 6rem;
+		}
+	
+	
+	#corteSlider{
+		width: 100%;
+		height: calc(100vh);
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		background-color: #000;
+		
+		-webkit-transition: all 0.2s ease-in-out;
+		-moz-transition: all 0.2s ease-in-out;
+		-o-transition: all 0.2s ease-in-out;
+		-ms-transition: all 0.2s ease-in-out;
+		transition: all 0.2s ease-in-out;
+	}
+
+
+
+
+
+
+
+
+
+
+
+/* ==========================================================================
+	Media Queries
+========================================================================== */
+@media only screen and (max-width: 1600px) {
+
+}
+
+
+
+
+
+
+
+
+
+/* ==========================================================================
+	Media Queries
+========================================================================== */
+@media only screen and (max-width: 1280px) {
+
+}
+
+
+
+
+
+
+
+/* ==========================================================================
+	Media Queries
+========================================================================== */
+@media only screen and (max-width: 1024px) {
+	.boxCols > .col3{
+				
+	}
+}
+
+
+
+
+
+
+
+
+/* ==========================================================================
+	Media Queries
+========================================================================== */
+@media only screen and (max-width: 985px) {
+	.mainSec, #prefooter, footer{
+		overflow-x: hidden;
+	}
+	.mainSec{
+		overflow: inherit;
+	}
+	.boxCols > .col3{
+		display: none;
+	}
+	nav#menu{
+		height: 58px;
+	}
+	ul#menuBox{
+		display: none;
+	}
+	ul#menuBoxMovile{
+		display: inline-block;
+		top: 24px;
+	}
+		ul#menuBoxMovile li:after {
+		    height: 15px;
+		    bottom: -23px;
+		}
+	#logo {
+	    top: 9px;
+	}
+	#fondo{
+		display: none;
+	}
+	#boxBack {
+	    height: calc(100vh - 95px);
+	    top: 95px;
+	}
+	#boxTelMovile{
+		width: calc(100vw);
+	    background-color: #f07033;
+	    height: 38px;
+	    position: absolute;
+	    top: 58px;
+	    left: 0px;
+	    text-align: right;
+	    display: flex;
+	    flex-direction: row-reverse;
+	    font-size: 20pt;
+	    align-items: center;
+	    font-family: 'twceb';
+	}
+		#telMovile{
+			padding: 0px 16px 0px 0px;
+			cursor: pointer;
+		}
+		#whatsappMovile{
+			width: auto;
+			height: 100%;
+			display: flex;
+			align-items: center;
+			margin-right: 6%;
+		}
+			#whatsappMovile img{
+				height: 76%;
+				width: auto;
+			}
+	
+	#formMovile{
+		width: 100%;
+	    height: calc(100vh - 95px);
+	    display: block;
+	    position: absolute;
+	    left: 0px;
+	    top: 96px;
+	    background-color: #f07033;
+	    border-top: 1px solid #333;
+	    overflow-y: auto;
+	}
+		#boxFormMovile{
+			width: 100%;
+			height: auto;
+			min-height: calc(100vh - 95px);
+		}
+	
+	#video_text {
+	    padding-top: 95px;
+	    min-height: calc(56vw + 95px);
+	}
+}
+
+
+
+
+
+
+
+
+
+/* ==========================================================================
+	Media Queries
+========================================================================== */
+@media only screen and (max-width: 850px) {
+
+}
+
+
+
+
+
+
+
+
+
+/* ==========================================================================
+	Media Queries
+========================================================================== */
+@media only screen and (max-width: 667px) {
+	nav#menu{
+		padding: 0px 6%;
+	}
+	ul#menuBox,
+	ul#menuBoxMovile{
+		right: 6%;
+	}
+	#videoControls{
+	    right: 6%;
+	}
+	.mainSec{
+		padding: 1rem 6% 6rem;
+	}
+	#prefooter{
+		padding: 1rem 6% 0rem;
+	}
+	footer{
+		padding: 0rem 6% 3rem;
+	}
+	
+	
+	.boxCols{
+		justify-content: initial;
+		flex-wrap: wrap;
+	}
+		.boxCols > .col1, .boxCols > .col2, .boxCols > .col3{
+			flex: 100%;
+		}
+		
+		.boxCols > .col1 .btnSlider {
+		    position: relative;
+		    bottom: 0px;
+		}
+			.boxCols > .col1 .btnSlider .col1{
+				display: none;
+			}
+		.boxCols > .col2{
+			margin-top: 12px;
+		}
+		.boxCols > .col2 .linea.humano .col1 {
+		    width: 87px;
+		}
+			.boxCols > .col2 .linea .col1 img {
+			    position: relative;
+			    left: -6px;
+			}
+		.boxTitulo h2 {
+		    font-size: 36pt;
+		    letter-spacing: 8px;
+		    line-height: 1;
+		}
+		.manchaTitulo{
+			left: -39%;
+		}
+		#prefooter .caja {
+			padding: 0px 12px;
+		}
+			#prefooter .caja h3 {
+				font-size: 28pt;
+			}
+			
+		footer .caja{
+			padding: 0px;
+			text-align: justify;
+		}
+		
+	footer{
+		padding: 0rem 6% 0rem;
+	}
+	
+
+}
+
+
+
+
+
+
+
+/* margin-top: calc(-32vh); */
+
+
+
+
+
+
+
+
+
+/* ==========================================================================
+	Media Queries
+========================================================================== */
+@media only screen and (max-width: 640px) {
+	
+}
+
+
+
+
+
+
+
+
+
+
+/* ==========================================================================
+	Media Queries
+========================================================================== */
+@media only screen and (max-width: 480px) {
+	#boxLogosFooter{
+		flex-direction: column;
+		height: auto;
+		padding: 1rem 0px;
+	}
+		#boxLogosFooter div{
+		    height: auto;
+			width: 100%;
+			padding: 14px 1rem;
+		}
+			#boxLogosFooter div img {
+			    height: auto;
+			    width: 100%;
+			}
+}
+
+
+
+
+
+
+
+
+
+
+/* ==========================================================================
+	Media Queries
+========================================================================== */
+@media only screen and (max-width: 360px) {
+	
+}
+
+
+
+
+
+
+
+
+
+
