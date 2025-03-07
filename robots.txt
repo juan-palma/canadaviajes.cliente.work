@@ -5,3 +5,7 @@ Disallow: /css/
 Disallow: /js/
 Disallow: /php/
 Disallow: /img/
+
+
+User-agent: *
+Disallow: /
